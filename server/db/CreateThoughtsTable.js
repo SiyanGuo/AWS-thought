@@ -9,7 +9,7 @@ const dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 
 //Create the params Object
 const params = {
-    TableName : "Thoughts",
+    TableName : "DeepThoughts",
     KeySchema: [       
       { AttributeName: "username", KeyType: "HASH"},  // Partition key
       { AttributeName: "createdAt", KeyType: "RANGE" }  // Sort key
