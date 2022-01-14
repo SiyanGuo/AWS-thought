@@ -5,8 +5,9 @@ const AWS = require("aws-sdk");
 const awsConfig = {
   region: "us-east-2",
   endpoint: "http://localhost:8000",
-
 };
+
+
 AWS.config.update(awsConfig);
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 const table = "DeepThoughts";
