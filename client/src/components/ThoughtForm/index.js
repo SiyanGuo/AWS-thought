@@ -15,7 +15,6 @@ const ThoughtForm = () => {
 
     const data = new FormData();
     data.append('image', fileInput.current.files[0]);
-    console.log('data', data)
     //send image file to endpoint with the postImage function
     const postImage = async () => {
       try {
@@ -26,7 +25,7 @@ const ThoughtForm = () => {
         })
         if (!res.ok) throw new Error(res.statusText);
         const postResponse = await res.json();
-        setFormState({ ...formState, image: postResponse.location })
+        setFormState({ ...formState, image: postResponse.Location })
         setUpload(true)
         console.log("postImage:", postResponse.Location)
         return postResponse.Location;
@@ -65,7 +64,7 @@ const ThoughtForm = () => {
     postData();
 
     // clear form value
-    setFormState({ username: "", thought: "" });
+    setFormState({ username: "", thought: "", image: "" });
     setCharacterCount(0);
   }
 
